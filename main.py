@@ -1,9 +1,6 @@
 import re
 import random
 import string
-import sys
-from PyQt6 import QtWidgets
-from PyQt6.QtWidgets import QApplication, QMainWindow
 
 
 color_text = '#9e9f9d'
@@ -55,18 +52,3 @@ def generate_password(length, include_special, include_digits, include_upper):
         characters += string.ascii_uppercase
     return ''.join(random.choice(characters) for _ in range(length))
 
-
-def application():
-    app = QApplication(sys.argv)
-    window = QMainWindow()
-    window.setWindowTitle("Password Generator/Checker")
-
-    header1 = QtWidgets.QPlainTextEdit()
-
-
-
-
-    window.setGeometry(300, 250, 350, 200)
-    window.show()
-    sys.exit(app.exec())
-application()
