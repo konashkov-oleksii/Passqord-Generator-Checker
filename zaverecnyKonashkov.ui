@@ -13,20 +13,29 @@
   <property name="windowTitle">
    <string>Password Generator/Checker </string>
   </property>
+  <property name="toolTip">
+   <string notr="true"/>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(34, 46, 56)</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="toolTip">
+    <string notr="true"/>
+   </property>
    <widget class="QWidget" name="horizontalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-10</x>
       <y>0</y>
-      <width>388</width>
+      <width>398</width>
       <height>348</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SizeConstraint::SetFixedSize</enum>
+     </property>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="leftMargin">
@@ -56,6 +65,9 @@
            <bold>true</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string notr="true"/>
+         </property>
          <property name="text">
           <string>Checker</string>
          </property>
@@ -68,12 +80,19 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="toolTip">
+          <string notr="true"/>
+         </property>
+        </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
-         <property name="styleSheet">
+        <widget class="QPushButton" name="btnCheck">
+         <property name="toolTip">
           <string notr="true"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: grey</string>
          </property>
          <property name="text">
           <string>Check</string>
@@ -81,18 +100,24 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="labelCheckResult">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="toolTip">
+          <string notr="true"/>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(116, 130, 174)</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>result</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -102,6 +127,9 @@
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
         <number>0</number>
+       </property>
+       <property name="sizeConstraint">
+        <enum>QLayout::SizeConstraint::SetMinimumSize</enum>
        </property>
        <property name="leftMargin">
         <number>30</number>
@@ -133,6 +161,9 @@
            <bold>true</bold>
           </font>
          </property>
+         <property name="toolTip">
+          <string notr="true"/>
+         </property>
          <property name="layoutDirection">
           <enum>Qt::LayoutDirection::RightToLeft</enum>
          </property>
@@ -154,33 +185,48 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_3">
-         <property name="text">
-          <string>Special symbols</string>
+        <widget class="QCheckBox" name="checkDigits">
+         <property name="toolTip">
+          <string notr="true"/>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox_2">
-         <property name="text">
-          <string>Upper case</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="checkBox">
          <property name="text">
           <string>Digits</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QCheckBox" name="checkSpecialSymbols">
+         <property name="toolTip">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Special symbols</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="checkUpperCase">
+         <property name="toolTip">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>Upper Case</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnGenerate">
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string notr="true"/>
+         </property>
          <property name="autoFillBackground">
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">background-color: grey</string>
          </property>
          <property name="locale">
           <locale language="English" country="World"/>
@@ -191,18 +237,9 @@
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:rgb(116, 130, 174)</string>
-         </property>
-         <property name="text">
-          <string>result</string>
+        <widget class="QLineEdit" name="textGenerated">
+         <property name="toolTip">
+          <string notr="true"/>
          </property>
         </widget>
        </item>
@@ -211,11 +248,6 @@
     </layout>
    </widget>
   </widget>
-  <action name="actiondawdawdaw">
-   <property name="text">
-    <string>dawdawdaw</string>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>

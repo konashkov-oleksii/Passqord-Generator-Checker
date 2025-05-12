@@ -1,7 +1,10 @@
 import re
 import random
 import string
-from PyQt5 import QtWidgets
+import sys
+from PyQt6 import QtWidgets
+from PyQt6.QtWidgets import QApplication, QMainWindow
+
 
 color_text = '#9e9f9d'
 color_background_app = '#0b0c0e'
@@ -14,24 +17,6 @@ color_entry_fg = 'white'
 color_result_strong = 'green'
 color_result_medium = 'orange'
 color_result_weak = 'red'
-
-button_style = {
-    'bg': color_button_bg,
-    'fg': 'white',
-    'activebackground': color_button_active,
-    'activeforeground': 'white',
-    'bd': 1,
-    'relief': 'flat',
-    'font': ('Arial', 11)
-}
-
-entry_style = {
-    'bg': color_entry_bg,
-    'fg': color_entry_fg,
-    'insertbackground': color_entry_fg,
-    'bd': 0,
-    'font': ('Arial', 12)
-}
 
 def check_password(password):
     strong_index = 0
@@ -69,3 +54,19 @@ def generate_password(length, include_special, include_digits, include_upper):
     if include_upper:
         characters += string.ascii_uppercase
     return ''.join(random.choice(characters) for _ in range(length))
+
+
+def application():
+    app = QApplication(sys.argv)
+    window = QMainWindow()
+    window.setWindowTitle("Password Generator/Checker")
+
+    header1 = QtWidgets.QPlainTextEdit()
+
+
+
+
+    window.setGeometry(300, 250, 350, 200)
+    window.show()
+    sys.exit(app.exec())
+application()
