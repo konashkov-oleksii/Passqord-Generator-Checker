@@ -1,6 +1,7 @@
 import re
 import random
 import string
+from PyQt5 import QtWidgets
 
 color_text = '#9e9f9d'
 color_background_app = '#0b0c0e'
