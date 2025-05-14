@@ -72,6 +72,7 @@ class Ui_PasswordGenerator(object):
 
         self.generatedPassword = QtWidgets.QLineEdit()
         self.generatedPassword.setPlaceholderText("Generated password will appear here...")
+        self.generatedPassword.setReadOnly(True)
         self.generatorLayout.addWidget(self.generatedPassword)
 
         self.contentLayout.addLayout(self.generatorLayout)
